@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:P-{YYYY}-{####}",
+ "creation": "2024-08-30 17:02:47.157953",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "librarymember",
+  "paymentamount",
+  "payment_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "librarymember",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Library Member",
+   "options": "Library Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Bank\nCash\nCard",
+   "reqd": 1
+  },
+  {
+   "fieldname": "paymentamount",
+   "fieldtype": "Currency",
+   "label": "Payment Amount",
+   "non_negative": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-31 13:14:22.936981",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
