@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe.utils import getdate
 from frappe.model.document import Document
 
 
@@ -37,7 +38,124 @@ class LibraryTransaction(Document):
                 if i.issued_article== self.article:
                     frappe.db.delete("Issued Articles", i.name)
                     break
-            doc.save()       
+            doc.save()  
+
+    def on_submit(self):
+        if self.type == "Issue":
+            # Handling article issue
+            doc = frappe.get_doc('Library Member', self.library_member)
+            doc.append("issues_articles", {
+                "issued_article": self.article,
+                "issued_date": self.date  # Store the issue date
+            })
+            doc.save()
+
+        elif self.type == "Return":
+            # Handling article return
+            doc = frappe.get_doc('Library Member', self.library_member)
+            fine = 0  # Initialize the fine to 0
+            fine_pay_doc = None  # Variable to hold the Fine Pay document
+            
+            for entry in doc.issues_articles:
+                if entry.issued_article == self.article:
+                    issue_date = getdate(entry.issued_date)  # Convert to date object
+                    return_date = getdate(self.date)  # Convert to date object
+
+                    # Calculate days between issue date and return date
+                    days_diff = (return_date - issue_date).days
+
+                    # If return date exceeds 7 days, impose a fine for late return
+                    if days_diff > 7:
+                        late_days = days_diff - 7
+                        fine = late_days * 10  # Apply fine of 10 currency units per day
+
+                        # Create a new Fine Pay document
+                        fine_pay_doc = frappe.get_doc({
+                            "doctype": "LibraryTransaction",
+                            "library_member": self.library_member,
+                            "article": self.article,
+                            "return_date": self.date,
+                            "fine_amount": fine
+                        })
+                        fine_pay_doc.insert()
+
+                        # Inform the user about the fine
+                        frappe.msgprint(f"A fine of {fine} currency units has been imposed for the late return.")
+                    
+                    # Remove the article from the issues_articles child table
+                    doc.issues_articles.remove(entry.name)
+                    break  # Exit loop once the corresponding issue record is found
+
+            # Save the updated Library Member document
+            doc.save()
+
+            # Save the Fine Pay document if it was created
+            if fine_pay_doc:
+                fine_pay_doc.submit()
+  
+  
+  
+  import frappe
+from frappe.utils import getdate
+from frappe.model.document import Document
+
+class LibraryTransaction(Document):
+    def on_submit(self):
+        if self.type == "Issue":
+            # Handling article issue
+            doc = frappe.get_doc('Library Member', self.library_member)
+            doc.append("issues_articles", {
+                "issued_article": self.article,
+                "issued_date": self.date  # Store the issue date
+            })
+            doc.save()
+
+        elif self.type == "Return":
+            # Handling article return
+            doc = frappe.get_doc('Library Member', self.library_member)
+            fine = 0  # Initialize the fine to 0
+            fine_pay_doc = None  # Variable to hold the Fine Pay document
+            
+            for entry in doc.issues_articles:
+                if entry.issued_article == self.article:
+                    issue_date = getdate(entry.issued_date)  # Convert to date object
+                    return_date = getdate(self.date)  # Convert to date object
+
+                    # Calculate days between issue date and return date
+                    days_diff = (return_date - issue_date).days
+
+                    # If return date exceeds 7 days, impose a fine for late return
+                    if days_diff > 7:
+                        late_days = days_diff - 7
+                        fine = late_days * 10  # Apply fine of 10 currency units per day
+
+                        # Create a new Fine Pay document
+                        fine_pay_doc = frappe.get_doc({
+                            "doctype": "Fine Pay",
+                            "library_member": self.library_member,
+                            "article": self.article,
+                            "return_date": self.date,
+                            "fine_amount": fine
+                        })
+                        fine_pay_doc.insert()
+
+                        # Inform the user about the fine
+                        frappe.msgprint(f"A fine of {fine} currency units has been imposed for the late return.")
+                    
+                    # Remove the article from the issues_articles child table
+                    doc.issues_articles.remove(entry.name)
+                    break  # Exit loop once the corresponding issue record is found
+
+            # Save the updated Library Member document
+            doc.save()
+
+            # Save the Fine Pay document if it was created
+            if fine_pay_doc:
+                fine_pay_doc.submit()
+
+
+   
+                   
 
     def validate_issue(self):
         self.validate_membership()

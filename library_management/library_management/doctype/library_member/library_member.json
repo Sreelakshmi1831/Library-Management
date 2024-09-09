@@ -13,7 +13,8 @@
   "phone",
   "section_break_gaux",
   "issues_articles",
-  "amended_from"
+  "amended_from",
+  "fine_pay"
  ],
  "fields": [
   {
@@ -63,11 +64,19 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "fine_pay",
+   "fieldtype": "Table",
+   "label": "FIne Pay",
+   "options": "Fine Pay",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-02 13:12:46.372518",
+ "modified": "2024-09-09 12:59:36.478627",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Member",

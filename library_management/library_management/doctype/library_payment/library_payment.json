@@ -6,41 +6,49 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "librarymember",
-  "paymentamount",
-  "payment_method"
+  "library_member",
+  "payment_amount",
+  "payment_method",
+  "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "librarymember",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Library Member",
-   "options": "Library Member",
-   "reqd": 1
-  },
   {
    "fieldname": "payment_method",
    "fieldtype": "Select",
    "label": "Payment Method",
-   "options": "Bank\nCash\nCard",
-   "reqd": 1
+   "options": "Bank\nCash\nCard"
   },
   {
-   "fieldname": "paymentamount",
+   "fieldname": "payment_amount",
    "fieldtype": "Currency",
    "label": "Payment Amount",
-   "non_negative": 1,
-   "reqd": 1
+   "non_negative": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "library_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Library Member",
+   "options": "Library Member"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-31 13:14:22.936981",
+ "modified": "2024-09-04 12:14:05.189838",
  "modified_by": "Administrator",
  "module": "Library Management",
- "name": "Payment",
+ "name": "Library Payment",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

@@ -1,0 +1,125 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-09-05 15:19:25.169635",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": " First Name",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": " issues_articles",
+   "fieldtype": "Check",
+   "label": " Issues Articles",
+   "mandatory": 0,
+   "options": "\nIssued Articles",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "library_member",
+   "fieldtype": "Link",
+   "label": "Library Member",
+   "mandatory": 0,
+   "options": "Library Member",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": " from_date",
+   "fieldtype": "Date",
+   "label": " From Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": " Paid",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "article",
+   "fieldtype": "Link",
+   "label": "Article",
+   "mandatory": 0,
+   "options": "Article",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "library_member",
+   "fieldtype": "Link",
+   "label": "Library Member ",
+   "mandatory": 0,
+   "options": "Library Member ",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": " Type",
+   "mandatory": 0,
+   "options": "Issue",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "mandatory": 0,
+   "options": "Library Transaction",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-09-06 10:45:55.087647",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "LM Reports",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    lm.full_name AS 'Member Name', \r\n    lms.name AS 'Membership ID', \r\n    lms.from_date AS `From Date`,\r\n    lms.to_date AS `To Date`, \r\n    lms.paid AS `Paid`,\r\n    lms.email_address AS `Email `,\r\n    lms.issues_articles AS `Issues `\r\nFROM `tabLibrary Member` lm\r\nLEFT JOIN `tabLibrary Membership` lms\r\nON lm.name = lms.library_member\r\nORDER BY lm.full_name;\r\n",
+ "ref_doctype": "Library Member",
+ "report_name": "LM Reports",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
