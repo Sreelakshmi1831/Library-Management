@@ -18,5 +18,10 @@ frappe.ui.form.on('Library Member', {
                 library_member: frm.doc.name
             })
         })
+		frm.add_custom_button('Pay Fine',() => {
+			frappe.new_doc("Fine Payment", {
+				library_member: frm.doc.name
+			})
+        })			
     }
 });

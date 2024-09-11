@@ -14,7 +14,7 @@
   "section_break_gaux",
   "issues_articles",
   "amended_from",
-  "fine_pay"
+  "fine_amount"
  ],
  "fields": [
   {
@@ -66,17 +66,15 @@
    "search_index": 1
   },
   {
-   "columns": 3,
-   "fieldname": "fine_pay",
+   "fieldname": "fine_amount",
    "fieldtype": "Table",
-   "label": "FIne Pay",
-   "options": "Fine Pay",
-   "reqd": 1
+   "label": "Fine Pay",
+   "options": "Fine Pay"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-09 12:59:36.478627",
+ "modified": "2024-09-11 09:50:03.360519",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Member",
