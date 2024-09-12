@@ -12,7 +12,7 @@
   "email_address",
   "phone",
   "section_break_gaux",
-  "issues_articles",
+  "issues_article",
   "amended_from",
   "fine_amount"
  ],
@@ -50,12 +50,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "issues_articles",
-   "fieldtype": "Table",
-   "label": "Issues Articles",
-   "options": "Issued Articles"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -70,11 +64,17 @@
    "fieldtype": "Table",
    "label": "Fine Pay",
    "options": "Fine Pay"
+  },
+  {
+   "fieldname": "issues_article",
+   "fieldtype": "Table",
+   "label": "Issues Articles",
+   "options": "Issued Articles"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-11 09:50:03.360519",
+ "modified": "2024-09-12 13:50:05.305460",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Member",

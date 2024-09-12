@@ -6,21 +6,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "article",
+  "article_name",
   "library_member",
   "type",
-  "date",
-  "amended_from"
+  "date"
  ],
  "fields": [
-  {
-   "fieldname": "article",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Article",
-   "options": "Article",
-   "reqd": 1
-  },
   {
    "fieldname": "library_member",
    "fieldtype": "Link",
@@ -43,20 +34,17 @@
    "reqd": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Library Transaction",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "fieldname": "article_name",
+   "fieldtype": "Table MultiSelect",
+   "label": "Article Name",
+   "options": "Article Name",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-10 09:43:32.267731",
+ "modified": "2024-09-12 15:09:59.612777",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Transaction",

@@ -23,7 +23,8 @@
    "fieldname": "issued_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Issued Date"
+   "label": "Issued Date",
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -40,7 +41,7 @@
  "is_submittable": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-09 12:20:22.625760",
+ "modified": "2024-09-12 13:52:37.108276",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Issued Articles",
