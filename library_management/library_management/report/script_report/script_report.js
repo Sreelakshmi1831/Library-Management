@@ -1,4 +1,3 @@
-// Copyright (c) 2024, sreelakshmi and contributors
 frappe.query_reports["Script Report"] = {
     "filters": [
         {
@@ -13,13 +12,25 @@ frappe.query_reports["Script Report"] = {
             "fieldtype": "Data",
             "default": ""
         },
-       
         {
             "fieldname": "status",
             "label": __("Status"),
             "fieldtype": "Select",
-            "options": "\nAvailable\nIssued\nReturn",  // Add relevant status options here
+            "options": "\nAvailable\nIssued\nReturn",
             "default": "Available"
+        },
+        {
+            "fieldname": "journal",
+            "label": __("Journal"),
+            "fieldtype": "Select",
+            "options": "\nMotivation\nFantasy\nHorror\nFeelgood\nInvestigation thriller\nThriller\nSuspense\nPsycho thrillers\nSports\nComedy",
+            "default": ""
+        },
+        {
+            "fieldname": "sort_by_row",
+            "label": __("Sort by  Row Number"),
+            "fieldtype": "Check",
+            "default": 1  // Default to sorting by row number
         }
     ]
 };

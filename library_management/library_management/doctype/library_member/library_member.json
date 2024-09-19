@@ -74,7 +74,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-12 13:50:05.305460",
+ "modified": "2024-09-16 13:56:21.253015",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Member",
@@ -90,6 +90,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "librarian",
    "share": 1,
    "write": 1
   }
