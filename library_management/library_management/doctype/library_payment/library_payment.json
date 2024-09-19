@@ -22,14 +22,16 @@
    "fieldname": "payment_amount",
    "fieldtype": "Currency",
    "label": "Payment Amount",
-   "non_negative": 1
+   "non_negative": 1,
+   "options": "Membership Fee",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Payment",
+   "options": "Library Payment",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -45,7 +47,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-04 12:14:05.189838",
+ "modified": "2024-09-16 13:57:00.172170",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Payment",
@@ -61,6 +63,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "librarian",
    "share": 1,
    "write": 1
   }

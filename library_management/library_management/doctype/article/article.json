@@ -15,11 +15,14 @@
   "column_break_mecd",
   "status",
   "image",
+  "journal",
   "section_break_zbfm",
   "description",
   "amended_from",
   "route",
-  "published"
+  "published",
+  "row_number",
+  "journal_prefix_row_number"
  ],
  "fields": [
   {
@@ -93,13 +96,30 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "Published"
+  },
+  {
+   "fieldname": "journal",
+   "fieldtype": "Select",
+   "label": "Journal",
+   "options": "Motivation\nFantasy\nHorror\nFeelgood\nInvestigation thriller\nThriller\nSuspense\nPsycho thrillers\nSports\nComedy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "row_number",
+   "fieldtype": "Int",
+   "label": "Row Number"
+  },
+  {
+   "fieldname": "journal_prefix_row_number",
+   "fieldtype": "Data",
+   "label": "colum number"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2024-09-02 13:08:16.534853",
+ "modified": "2024-09-19 10:34:27.975467",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
@@ -126,7 +146,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "librarian",
+   "role": "Librarian",
    "share": 1,
    "write": 1
   },
@@ -136,7 +156,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "library member",
+   "role": "Library member",
    "share": 1
   }
  ],

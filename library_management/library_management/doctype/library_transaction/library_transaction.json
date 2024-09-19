@@ -9,7 +9,8 @@
   "article_name",
   "library_member",
   "type",
-  "date"
+  "date",
+  "amended_from"
  ],
  "fields": [
   {
@@ -24,7 +25,8 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "Issue\nReturn"
+   "options": "Issue\nReturn",
+   "reqd": 1
   },
   {
    "fieldname": "date",
@@ -39,12 +41,22 @@
    "label": "Article Name",
    "options": "Article Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Library Transaction",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-12 15:09:59.612777",
+ "modified": "2024-09-18 11:22:28.598381",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Transaction",
@@ -71,7 +83,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "librarian",
+   "role": "Librarian",
    "share": 1,
    "write": 1
   }

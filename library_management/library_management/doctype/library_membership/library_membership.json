@@ -42,7 +42,8 @@
    "default": "0",
    "fieldname": "paid",
    "fieldtype": "Check",
-   "label": "Paid"
+   "label": "Paid",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -58,7 +59,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-28 10:52:17.865976",
+ "modified": "2024-09-13 11:50:42.953663",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Membership",
@@ -95,4 +96,5 @@
  "sort_order": "DESC",
  "states": [],
  "title_field": "full_name"
+ 
 }
